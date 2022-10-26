@@ -1,8 +1,13 @@
-const pobi = [97, 98];
-const crong = [197, 198];
+const pobi = [99, 102];
+const crong = [211, 212];
 
 function problem1(pobi, crong) {
-  //두번 map 해야겠다
+  if (pobi[1] - pobi[0] !== 1 || crong[1] - crong[0] !== 1) {
+    return -1;
+  }
+  if (pobi[0] === 1 || pobi[1] === 400 || crong[0] === 1 || crong[1] === 400) {
+    return -1;
+  }
   let pobiArr = [];
   let crongArr = [];
   const pobiString = pobi.map((item) => String(item));
@@ -23,8 +28,8 @@ function problem1(pobi, crong) {
     pobiArr.push(pobiPlus, pobiMultiple);
     crongArr.push(crongPlus, crongMultiple);
   }
-  const pobiMax = Math.pobiMax(...pobiArr);
-  const crongMax = Math.pobiMax(...crongArr);
+  const pobiMax = Math.max(...pobiArr);
+  const crongMax = Math.max(...crongArr);
   if (pobiMax > crongMax) {
     return 1;
   } else if (pobiMax < crongMax) {
@@ -34,5 +39,5 @@ function problem1(pobi, crong) {
   } else {
     return -1;
   }
+  //예외처리 추가로 더 필요
 }
-problem1(pobi, crong);

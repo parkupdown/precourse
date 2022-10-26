@@ -1,6 +1,5 @@
-const pobi = [97, 98];
-const crong = [197, 198];
-
+const pobi = [131, 132];
+const crong = [211, 212];
 function problem1(pobi, crong) {
   //두번 map 해야겠다
   let pobiArr = [];
@@ -25,6 +24,8 @@ function problem1(pobi, crong) {
     }
     crongArr.push(plusSum, multipleSum);
   }
+  console.log(pobiArr);
+  console.log(crongArr);
   const pobiMax = Math.max(...pobiArr);
   const crongMax = Math.max(...crongArr);
 
