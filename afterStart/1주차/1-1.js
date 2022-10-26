@@ -8,10 +8,13 @@ function problem1(pobi, crong) {
   if (pobi[0] === 1 || pobi[1] === 400 || crong[0] === 1 || crong[1] === 400) {
     return -1;
   }
+  //예외처리 기능1
+
   let pobiArr = [];
   let crongArr = [];
   const pobiString = pobi.map((item) => String(item));
   const crongString = crong.map((item) => String(item));
+  //기능 2
   for (i = 0; i < 2; i++) {
     const pobiPlus = [...pobiString[i]].reduce((acc, cur) => {
       return acc + parseInt(cur);
@@ -28,8 +31,11 @@ function problem1(pobi, crong) {
     pobiArr.push(pobiPlus, pobiMultiple);
     crongArr.push(crongPlus, crongMultiple);
   }
+  //기능3
+
   const pobiMax = Math.max(...pobiArr);
   const crongMax = Math.max(...crongArr);
+  //기능4
   if (pobiMax > crongMax) {
     return 1;
   } else if (pobiMax < crongMax) {
@@ -39,5 +45,4 @@ function problem1(pobi, crong) {
   } else {
     return -1;
   }
-  //예외처리 추가로 더 필요
-}
+} //기능 5
