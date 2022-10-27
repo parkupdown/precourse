@@ -12,11 +12,13 @@ function solution(forms) {
   const crewName = forms.map((item) => item[1]); //기능 1
   //제이엠, 제이슨, 워니, 엠제이, 이제엠
   const sortCrewName = crewName.map((item) => [...item].sort()); //기능 2
+
   const joinCrewName = sortCrewName.map(
     (
       item // 기능 3
     ) => item.filter((item, index) => index < 2)
-  );
+  ); // 연속임으로 2글자만 중복돼도 이는 중복!
+
   joinCrewName.forEach((item) => {
     let Name = "";
     item.forEach((item) => {
