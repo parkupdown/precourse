@@ -16,11 +16,9 @@ function stringfyPage(pobi, crong) {
 } //이거는 한꺼번에주는게나을듯
 
 function calculationPages(pobiPages, crongPages) {
-  let pobiPlus = 0;
-  let pobiMultiple = 0;
-  let crongPlus = 0;
-  let crongMultiple = 0;
-  for (i = 0; i < 2; i++) {
+  let [pobiPlus, pobiMultiple, crongPlus, crongMultiple] = [0, 0, 0, 0];
+  let i = 0;
+  for (; i < 2; i++) {
     pobiPlus = [...pobiPages[i]].reduce((acc, cur) => {
       return acc + parseInt(cur);
     }, 0);

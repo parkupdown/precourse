@@ -1,7 +1,8 @@
 const cryptogram = "browoanoommnaon";
 
 function deleteOverlab(cryptogtramArray, compareArray) {
-  for (i = 0; i < cryptogtramArray.length; i++) {
+  let i = 0;
+  for (; i < cryptogtramArray.length; i++) {
     if (cryptogtramArray[i] === compareArray[compareArray.length - 1]) {
       compareArray.pop();
     } else if (cryptogtramArray[i] !== compareArray[compareArray.length - 1]) {
