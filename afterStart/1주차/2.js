@@ -2,15 +2,21 @@ const cryptogram = "browoanoommnaon";
 
 function solution(cryptogram) {
   const stringArray = [...cryptogram];
+
+  //스트링의 배열화
+
   let compareArray = [];
+
   for (i = 0; i < stringArray.length; i++) {
     if (stringArray[i] === compareArray[compareArray.length - 1]) {
       compareArray.pop();
-    } else if (stringArray[i] !== compareArray[compareArray.length - 1]) {
+    }
+    if (stringArray[i] !== compareArray[compareArray.length - 1]) {
       compareArray.push(stringArray[i]);
     }
   }
   //기능1
+
   return compareArray.join("");
   //기능2
 }
