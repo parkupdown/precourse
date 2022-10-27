@@ -19,8 +19,11 @@ function countClap(numArray, count) {
 function problem3(number) {
   let numArray = [];
   let count = 0;
+
   numberToArray(number, numArray);
+
   const answer = countClap(numArray, count);
+
   return answer;
 }
 problem3(number);

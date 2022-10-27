@@ -40,16 +40,18 @@ function solution(word) {
   const answerArray = wordArrays.map((item) => {
     if (item === " ") {
       return " ";
-    } else if (item.toLowerCase() === item) {
-      //소문자
+    }
+    //공백옮기기
+    else if (item.toLowerCase() === item) {
       let wordLowerIndex = lowerWord.indexOf(item);
-      console.log(wordLowerIndex);
       return revLowerCase[wordLowerIndex];
-    } else if (item.toUpperCase() === item) {
-      //대문자
+    }
+    //소문자찾기
+    else if (item.toUpperCase() === item) {
       let wordUpperIndex = upperWord.indexOf(item);
       console.log(wordUpperIndex);
       return revUpperCase[wordUpperIndex];
+      //대문자찾기
     }
   });
   return answerArray;
