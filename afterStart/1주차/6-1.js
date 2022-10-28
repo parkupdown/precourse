@@ -18,7 +18,7 @@ function cutTwoCharArray(crewNameArr, twoCharNameArr) {
     for (; i < item.length - 1; i++) {
       twoCharNameArr.push(item.slice(i, i + 2));
     }
-  }); //두글자로 이루어진 완성
+  }); //두글자로 이루어진 전체 array 완성
 }
 function pushOverlapArray(twoCharNameArr, overlapArray) {
   let toCheckArray = [];
