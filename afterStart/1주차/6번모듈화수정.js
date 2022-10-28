@@ -6,21 +6,29 @@ const forms = [
   ["nowm@email.com", "이제엠"],
 ]; //
 
-function crewNameArray(forms, crewNameArr) {
+function crewNameArray(forms) {
+  let crewNameArr = [];
   forms.forEach((item) => {
     crewNameArr.push(item[1]);
   });
-}
+  return crewNameArr; // 두개로 나왓어 이걸 그냥 짜르면돼
+} //이렇게하면 진짜 그 값을 저장함
 
-function cutTwoCharArray(crewNameArr, twoCharNameArr) {
+function cutTwoCharArray(forms) {
+  const crewNameArr = crewNameArray(forms);
+  let twoCharNameArr = [];
   crewNameArr.forEach((item) => {
     let i = 0;
     for (; i < item.length - 1; i++) {
       twoCharNameArr.push(item.slice(i, i + 2));
     }
   }); //두글자로 이루어진 완성
+  return twoCharNameArr;
 }
-function pushOverlapArray(twoCharNameArr, overlapArray) {
+
+function pushOverlapArray(forms) {
+  const twoCharNameArr = cutTwoCharArray(forms);
+  let overlapArray = [];
   let toCheckArray = [];
   twoCharNameArr.forEach((twoCharName) => {
     if (toCheckArray.includes(twoCharName) === true) {
@@ -30,10 +38,12 @@ function pushOverlapArray(twoCharNameArr, overlapArray) {
       toCheckArray.push(twoCharName);
     }
   });
+  return overlapArray;
 }
 
-//판단
-function checkOverlap(overlapArray, forms, answer) {
+function problem6(forms) {
+  let answer = [];
+  const overlapArray = pushOverlapArray(forms);
   forms.forEach((nameAndEmail) => {
     let i = 0;
     for (; i < nameAndEmail.length; i++) {
@@ -42,29 +52,6 @@ function checkOverlap(overlapArray, forms, answer) {
       }
     } //이거는 problem에서
   });
-}
-
-function resultShow(answer) {
-  const set = new Set(answer);
-  const answers = [...set].sort();
-
-  return answers;
-}
-
-function problem6(forms) {
-  let crewNameArr = [];
-  let twoCharNameArr = [];
-  let count = 0;
-  let overlapArray = [];
-  let answer = [];
-
-  crewNameArray(forms, crewNameArr);
-
-  cutTwoCharArray(crewNameArr, twoCharNameArr, count);
-
-  pushOverlapArray(twoCharNameArr, overlapArray);
-  checkOverlap(overlapArray, forms, answer);
-  const answerEmail = resultShow(answer);
-  return answerEmail;
+  return answer.sort();
 }
 problem6(forms);

@@ -72,18 +72,8 @@ function wordToArray(word) {
   return wordArrays;
 }
 
-function checkVaccumCase(word) {
-  let vaccumChecked = wordToArray(word);
-  vaccumChecked.forEach((item, index) => {
-    if (item === " ") {
-      vaccumChecked[index] = " ";
-    }
-  });
-  return vaccumChecked;
-}
-
 function checkLowerCase(word) {
-  let lowerchecked = checkVaccumCase(word);
+  let lowerchecked = wordToArray(word);
   const [revLowerCase, revUpperCase] = reverseWord();
   const [lowerWord, upperWord] = alphabetGather();
   lowerchecked.forEach((item, index) => {
