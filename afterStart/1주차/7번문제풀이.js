@@ -11,14 +11,7 @@ const visitors = ["bedi", "bedi", "donut", "bedi", "shakevan"];
 function solution(user, friends, visitors) {
   //먼저 방문자 + 친구의 배열을 만들어야함
   //방문자 user 제외 배열만들기
-  let friendsExceptUserArr = [];
-  friends.forEach((item) =>
-    item.forEach((item) => {
-      if (friendsExceptUserArr.includes(item) === false && item !== user) {
-        friendsExceptUserArr.push(item);
-      }
-    })
-  );
+
   // user 친구 찾기
 
   let userFriends = [];
@@ -33,12 +26,22 @@ function solution(user, friends, visitors) {
 
   //친 사 친 찾기
 
+  let friendsExceptUserArr = [];
+  friends.forEach((item) =>
+    item.forEach((item) => {
+      if (friendsExceptUserArr.includes(item) === false && item !== user) {
+        friendsExceptUserArr.push(item);
+      }
+    })
+  );
+
   let notUserFriends = [];
   friendsExceptUserArr.forEach((item) => {
     if (userFriends.includes(item) === false) {
       notUserFriends.push(item);
     }
   });
+
   // 방문자 배열 정렬
 
   let visitorsArray = [];
@@ -52,12 +55,13 @@ function solution(user, friends, visitors) {
     }
   });
 
-  // friedns 배열에서 나온횟수찾기
+  // friends 배열에서 나온횟수찾기
 
   let allRecommendFriends = [...notUserFriends, ...visitorsArray];
 
-  let scoreOfRecmmend = [];
+  //두 배열 합치기
 
+  let scoreOfRecmmend = [];
   allRecommendFriends.forEach((item, index) => {
     let i = 0;
     let count = 10;
@@ -68,6 +72,7 @@ function solution(user, friends, visitors) {
       }
     }
   });
+  //친사친 포인트
 
   allRecommendFriends.forEach((item, index) => {
     let i = 0;
@@ -79,7 +84,7 @@ function solution(user, friends, visitors) {
       }
     }
   });
-  console.log(scoreOfRecmmend);
+  //방문 포인트
 
   let map = new Map();
 
