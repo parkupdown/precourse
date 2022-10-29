@@ -22,7 +22,7 @@ function cutTwoCharArray(forms) {
     for (; i < item.length - 1; i++) {
       twoCharNameArr.push(item.slice(i, i + 2));
     }
-  }); //두글자로 이루어진 완성
+  });
   return twoCharNameArr;
 }
 
