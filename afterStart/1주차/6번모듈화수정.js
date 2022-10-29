@@ -27,6 +27,7 @@ function cutTwoCharArray(forms) {
 }
 
 function pushOverlapArray(forms) {
+  //이게 독립적이게 사용해야함
   const twoCharNameArr = cutTwoCharArray(forms);
   let overlapArray = [];
   let toCheckArray = [];
@@ -50,7 +51,7 @@ function problem6(forms) {
       if (overlapArray.includes(nameAndEmail[1].slice(i, i + 2))) {
         answer.push(nameAndEmail[0]);
       }
-    } //이거는 problem에서
+    }
   });
   return answer.sort();
 }
