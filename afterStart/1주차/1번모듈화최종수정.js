@@ -1,54 +1,64 @@
 const firstBook = [101, 102];
 const secondBook = [211, 212];
 
-function checkBookPageNum(book) {
+//유효한 페이지인지 확인
+function checkBookPageError(book) {
   if (book[1] - book[0] !== 1) {
     return true;
   }
   if (book[0] === 1 || book[1] === 400) {
     return true;
   }
+
   return false;
 }
+// 입력된 배열의 숫자 원소를 string으로 변환시켜주는 함수
+function stringfyBookPageArr(book) {
+  const stringBookPageArr = book.map((item) => String(item));
 
-function stringfyBookPage(book) {
-  const bookString = book.map((item) => String(item));
-  console.log(bookString);
-  return bookString;
+  return stringBookPageArr;
 }
-
+// 배열의 각 원소의 자릿수를 더한 값과 곱한값을 리턴하는 함수
 function plusAndMultiPages(book) {
-  const bookString = stringfyBookPage(book);
-
-  let [bookPagePlus, bookPageMultiple] = [0, 0];
+  const stringBookPageArr = stringfyBookPageArr(book);
+  let [bookPageSumOfPlus, bookPageSumOfMultiple] = [0, 0];
   let i = 0;
+
   for (; i < 2; i++) {
-    bookPagePlus = [...bookString[i]].reduce((acc, cur) => {
+    bookPageSumOfPlus = [...stringBookPageArr[i]].reduce((acc, cur) => {
       return acc + parseInt(cur);
     }, 0);
-    bookPageMultiple = [...bookString[i]].reduce((acc, cur) => {
+    bookPageSumOfMultiple = [...stringBookPageArr[i]].reduce((acc, cur) => {
       return acc * parseInt(cur);
     }, 1);
   }
-  return [bookPagePlus, bookPageMultiple];
+
+  return [bookPageSumOfPlus, bookPageSumOfMultiple];
 }
 
+// 더한 값과 곱한 값을 하나의 배열에 넣어주는 함수
 function pushSumOfBooks(book) {
-  const [bookPagePlus, bookPageMultiple] = plusAndMultiPages(book);
-  let bookSumArr = [];
-  bookSumArr.push(bookPagePlus, bookPageMultiple);
-  return bookSumArr;
+  const [bookPageSumOfPlus, bookPageSumOfMultiple] = plusAndMultiPages(book);
+  let sumOfBookPageArr = [];
+
+  sumOfBookPageArr.push(bookPageSumOfPlus, bookPageSumOfMultiple);
+
+  return sumOfBookPageArr;
 }
 
-function findMaxNum(SumOfBookPageArr) {
+// 배열에서 최댓값을 찾아주는 함수
+function findMaxNum(book) {
+  const SumOfBookPageArr = pushSumOfBooks(book);
   const bookMax = Math.max(...SumOfBookPageArr);
+
   return bookMax;
 }
 
+// 값을 받아 그 값에 따른 결과를 출력하는함수
 function problem1(firstBook, secondBook) {
   if (
-    checkBookPageNum(firstBook) === true ||
-    checkBookPageNum(secondBook) === true
+    checkBookPageError(firstBook) === true ||
+    checkBookPageError(secondBook) === true
   ) {
     return -1;
   }
@@ -66,6 +76,8 @@ function problem1(firstBook, secondBook) {
   if (firstBookMax === secondBookMax) {
     return 0;
   }
+
+  return -1;
 }
 
 problem1(firstBook, secondBook);

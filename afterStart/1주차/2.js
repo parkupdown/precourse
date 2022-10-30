@@ -1,10 +1,7 @@
 const cryptogram = "browoanoommnaon";
 
 function solution(cryptogram) {
-  const stringArray = [...cryptogram];
-
-  //스트링의 배열화
-
+  const stringArray = [...cryptogram]; //스트링의 배열화
   let compareArray = [];
 
   for (i = 0; i < stringArray.length; i++) {

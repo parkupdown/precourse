@@ -10,9 +10,9 @@ const friends = [
 const visitors = ["bedi", "bedi", "donut", "bedi", "shakevan"];
 
 // user의 친구 찾기 함수
-
 function findUserFriends(friends) {
   let userFriends = [];
+
   friends.forEach((friend) => {
     if (friend[0] === user) {
       userFriends.push(friend[1]);
@@ -21,13 +21,14 @@ function findUserFriends(friends) {
       userFriends.push(friend[0]);
     }
   });
+
   return userFriends;
 }
 
 // user가 직접적으로는 모르는 친구 배열 반환 함수
-
 function findUnfriendlyFriends(friendsArr) {
   let unfriendlyFriendsrArr = [];
+
   friendsArr.forEach((friends) =>
     friends.forEach((friend) => {
       if (unfriendlyFriendsrArr.includes(friend) === false && friend !== user) {
@@ -35,26 +36,26 @@ function findUnfriendlyFriends(friendsArr) {
       }
     })
   );
-  console.log(unfriendlyFriendsrArr);
+
   return unfriendlyFriendsrArr;
 }
 
 //user의 친구의 친구 어레이 찾기
-
 function findNotUserFriend(friends) {
   const unfriendlyFriendsrArr = findUnfriendlyFriends(friends);
   const userFriends = findUserFriends(friends);
   let notUserFriends = [];
+
   unfriendlyFriendsrArr.forEach((friend) => {
     if (userFriends.includes(friend) === false) {
       notUserFriends.push(friend);
     }
   });
+
   return notUserFriends;
 }
 
 //방문자 중복제거
-
 function deleteOverlapVisitorArray(friends, visitors) {
   let visitorsArray = [];
   const userFriends = findUserFriends(friends);
@@ -67,9 +68,11 @@ function deleteOverlapVisitorArray(friends, visitors) {
       visitorsArray.push(item);
     }
   });
+
   return visitorsArray;
 }
 
+// 유저의 친구가 아닌 사람들과 방문자를 묶어주는 함수
 function makeCombinedArr(friends, visitors) {
   const notUserFriends = findNotUserFriend(friends);
   const visitorsArray = deleteOverlapVisitorArray(friends, visitors);
@@ -82,28 +85,30 @@ function makeCombinedArr(friends, visitors) {
 function checkSoreOfFriendsOfFriends(friends, visitors) {
   const combinedArr = makeCombinedArr(friends, visitors);
   let scoreOfFriendsRecommend = [];
+
   combinedArr.forEach((friend, index) => {
     let i = 0;
     let count = 10;
     for (; i < friends.length; i++) {
       if (friends[i].includes(friend)) {
-        console.log(friend);
         scoreOfFriendsRecommend.splice(index, 1, count);
         count = count + 10;
       }
     }
   });
-  console.log(scoreOfFriendsRecommend);
+
   return scoreOfFriendsRecommend;
 }
 
+// 방문자의 점수측정
 function checkSoreOfVisitor(friends, visitors) {
-  let scoreOfFriendsRecommend = checkSoreOfFriendsOfFriends(friends, visitors);
   const combinedArr = makeCombinedArr(friends, visitors);
-  console.log(combinedArr);
+  let scoreOfFriendsRecommend = checkSoreOfFriendsOfFriends(friends, visitors);
+
   combinedArr.forEach((friend, index) => {
     let i = 0;
     let count = 1;
+
     for (; i < visitors.length; i++) {
       if (visitors[i] === friend) {
         scoreOfFriendsRecommend.splice(index, 1, count);
@@ -111,11 +116,11 @@ function checkSoreOfVisitor(friends, visitors) {
       }
     }
   });
+
   return scoreOfFriendsRecommend;
 }
 
 //사람과 점수 묶기
-
 function friendsAndRecommendScore(friends, visitors) {
   const scoreOfFriendsRecommend = checkSoreOfVisitor(friends, visitors);
   const combinedArr = makeCombinedArr(friends, visitors);
@@ -128,9 +133,9 @@ function friendsAndRecommendScore(friends, visitors) {
   return map;
 }
 
+//점수가 담긴배열을 받아서 오름차순으로 정돈 후 index5까지 잘라 반환하는함수
 function problem7(user, friends, visitors) {
   const friendsAndScoreArr = friendsAndRecommendScore(friends, visitors);
-
   let answerArr = [...friendsAndScoreArr];
 
   answerArr.sort((a, b) => b[1] - a[1]);
@@ -140,6 +145,7 @@ function problem7(user, friends, visitors) {
       return item[0];
     }
   });
+
   return answer;
 }
 problem7(user, friends, visitors);
