@@ -26,37 +26,28 @@ function findUserFriends(friends) {
 }
 
 // user가 직접적으로는 모르는 친구 배열 반환 함수
-function findUnfriendlyFriends(friendsArr) {
-  let unfriendlyFriendsrArr = [];
-
-  friendsArr.forEach((friends) =>
-    friends.forEach((friend) => {
-      if (unfriendlyFriendsrArr.includes(friend) === false && friend !== user) {
-        unfriendlyFriendsrArr.push(friend);
-      }
-    })
-  );
-
-  return unfriendlyFriendsrArr;
-}
-
-//user의 친구의 친구 어레이 찾기
-function findNotUserFriend(friends) {
-  const unfriendlyFriendsrArr = findUnfriendlyFriends(friends);
+function findNotUserfriends(friends) {
   const userFriends = findUserFriends(friends);
   let notUserFriends = [];
 
-  unfriendlyFriendsrArr.forEach((friend) => {
-    if (userFriends.includes(friend) === false) {
-      notUserFriends.push(friend);
-    }
-  });
-
+  friends.forEach((friendsArr) =>
+    friendsArr.forEach((friend) => {
+      if (
+        userFriends.includes(friend) === false &&
+        friend !== user &&
+        notUserFriends.includes(friend) === false
+      ) {
+        notUserFriends.push(friend);
+      }
+    })
+  );
   return notUserFriends;
 }
 
+//user의 친구의 친구 어레이 찾기
+
 //방문자 중복제거
-function deleteOverlapVisitorArray(friends, visitors) {
+function deleteDuplicatesVisitorArray(friends, visitors) {
   let visitorsArray = [];
   const userFriends = findUserFriends(friends);
 
@@ -73,9 +64,10 @@ function deleteOverlapVisitorArray(friends, visitors) {
 }
 
 // 유저의 친구가 아닌 사람들과 방문자를 묶어주는 함수
+
 function makeCombinedArr(friends, visitors) {
-  const notUserFriends = findNotUserFriend(friends);
-  const visitorsArray = deleteOverlapVisitorArray(friends, visitors);
+  const notUserFriends = findNotUserfriends(friends);
+  const visitorsArray = deleteDuplicatesVisitorArray(friends, visitors);
   let combindedArr = [...notUserFriends, ...visitorsArray];
 
   return combindedArr;
@@ -84,61 +76,52 @@ function makeCombinedArr(friends, visitors) {
 //친구의 친구 점수측정
 function checkSoreOfFriendsOfFriends(friends, visitors) {
   const combinedArr = makeCombinedArr(friends, visitors);
-  let scoreOfFriendsRecommend = [];
+  let map = new Map();
 
-  combinedArr.forEach((friend, index) => {
+  combinedArr.forEach((friend) => {
     let i = 0;
     let count = 10;
     for (; i < friends.length; i++) {
       if (friends[i].includes(friend)) {
-        scoreOfFriendsRecommend.splice(index, 1, count);
+        map.set(friend, count);
         count = count + 10;
       }
     }
   });
 
-  return scoreOfFriendsRecommend;
+  return map;
 }
 
 // 방문자의 점수측정
 function checkSoreOfVisitor(friends, visitors) {
   const combinedArr = makeCombinedArr(friends, visitors);
-  let scoreOfFriendsRecommend = checkSoreOfFriendsOfFriends(friends, visitors);
+  let map = checkSoreOfFriendsOfFriends(friends, visitors);
 
-  combinedArr.forEach((friend, index) => {
+  combinedArr.forEach((friend) => {
     let i = 0;
     let count = 1;
 
     for (; i < visitors.length; i++) {
       if (visitors[i] === friend) {
-        scoreOfFriendsRecommend.splice(index, 1, count);
+        map.set(friend, count);
         count = count + 1;
       }
     }
   });
-
-  return scoreOfFriendsRecommend;
-}
-
-//사람과 점수 묶기
-function friendsAndRecommendScore(friends, visitors) {
-  const scoreOfFriendsRecommend = checkSoreOfVisitor(friends, visitors);
-  const combinedArr = makeCombinedArr(friends, visitors);
-
-  let map = new Map();
-
-  for (i = 0; i < combinedArr.length; i++) {
-    map.set(combinedArr[i], scoreOfFriendsRecommend[i]);
-  }
   return map;
 }
 
-//점수가 담긴배열을 받아서 오름차순으로 정돈 후 index5까지 잘라 반환하는함수
-function problem7(user, friends, visitors) {
-  const friendsAndScoreArr = friendsAndRecommendScore(friends, visitors);
-  let answerArr = [...friendsAndScoreArr];
+//사람과 점수 묶기
 
-  answerArr.sort((a, b) => b[1] - a[1]);
+//점수가 담긴배열을 받아서 오름차순으로 정돈 후 index5까지 잘라 반환하는함수
+
+function DuplicatedArrayToDesending(array) {
+  return array.sort((a, b) => b[1] - a[1]);
+}
+
+function problem7(user, friends, visitors) {
+  const friendsAndScoreArr = checkSoreOfVisitor(friends, visitors);
+  let answerArr = DuplicatedArrayToDesending([...friendsAndScoreArr]);
 
   const answer = answerArr.map((item, index) => {
     if (item !== 0 && index < 5) {
