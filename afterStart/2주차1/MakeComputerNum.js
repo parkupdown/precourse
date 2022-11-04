@@ -1,7 +1,7 @@
 export default function MakeComputerNum() {
   let numarr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   let computerNum = [];
-  for (i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i++) {
     const random = Math.floor(Math.random() * 9);
 
     if (computerNum.includes(numarr[random])) {
@@ -12,5 +12,3 @@ export default function MakeComputerNum() {
   }
   return computerNum.join("");
 }
-
-MakeComputerNum();
