@@ -104,6 +104,13 @@ for (i = 0, len = array.length; i < len; i += 1) ...
 // good
 var key;
 for (key in object) ...
-```
+``` 
+
+ #### 기타 깨알 코드 지식
+reduce(누적값,현재값) : 누적값을 리턴해 줄 수 있다.
+forEach는 return이 먹히지 않는다.
+string과 toString은 사실상 같다고 봐도 된다.
+toString은 인자를 하나 받는데 이에 따라 숫자의 표현방식이 달라진다 (이진법 십진법 )
+
 
 참고: https://ui.toast.com/fe-guide/ko_CODING-CONVENTION
