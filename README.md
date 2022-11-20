@@ -584,3 +584,569 @@ _그렇다면 테스트 코드를 살펴보자! _
 물론 필자의 코드가 정답도 아닐 뿐더러 다른 생각을 가진 분들도 많이 계실 수 있다.
 
 하지만 이번 목표에서 유의미 했던 점은 스스로 생각하여 판단해서 해당 반복문의 패턴을 고민했다는 점이다. 이유를 묻는다면 대답할 수 있게끔 생각하고 결론을 내렸다.
+
+# 우테코 프리코스 마지막 주 👀
+
+![](https://velog.velcdn.com/images/tkdgk1996/post/0ec6d458-3ae5-4740-8b02-a1f306dce181/image.jpeg)
+
+프리코스의 4주차가 이제 끝나간다..! 
+
+시원섭섭한 느낌을 많이 받는다. 열심히 했던 만큼 후회는 없지만 그래도 뭔가.. 좀 더 배울 수 있는 점이 있지 않았을까 스스로를 계속해서 의심하게 된다..😭
+
+그럼에도 잘해왔다고 믿으려한다! 좋아했던 풋살 (⚽️) 도 끊을 만큼 열심히 달려왔으니 이제 4주차 미션이 끝나면 하루에 두탕씩 뛰어야겠다🤤
+
+고생했다 조개맨!!
+
+## 4주차 미션 오징어게임 다리건너기 게임 🦑
+
+![](https://velog.velcdn.com/images/tkdgk1996/post/328dbd97-1dd4-4761-900f-27e236f06416/image.png)
+
+
+오징어 게임을 인상깊게 봤던 필자는 미션 메일을 받고 꽤나 반가웠다. 구현을 빠르게 해보고 싶었다. 뜨뜨뜬~뜨뜨뜬~ 뜨느뜨느뜨뜨뜬~ 머리 속에 BGM이 맴돌며 미션 관련 문서를 꼼꼼히 읽어봤다!
+
+2주차 3주차 미션을 해내면서 얻은 좋은 습관 중 하나는
+"문서를 꼼꼼히 읽게 된 것"이다.
+ 우테코 7기에 도전하실 독자가 있다면 미션 메일을 꼭 꼼꼼히 읽어볼것을 말씀드리고 싶다!! 잘 알고있는 게임이더라도 꼼꼼히 읽으면 내가 모르던 빈틈이 보일 수 있다! 
+ 특히 필자는 3주차 미션 (로또미션) 에서 여태 로또 규칙을 잘못 알고 있었음을 알게되었다.. 
+ 
+## 피드백 파일 꼼꼼히 읽기 
+사실 우테코 프리코스의 강점 중 하나라고 생각한다. 가장 정답에 가까운 방향을 제시해주시는 점이기에 합격을 위해서가 아니라 앞으로 코드를 어떻게 짜야하는지 방향성을 제시해준다! 
+
+📣 피드백 주된 내용
+
+- 함수는 최대한 작게 만들기
+- 예외사항에 대한 고민 찐하게하기
+- 비즈니스 로직과 UI 로직 분리하기
+- 객체를 객체스럽게 사용하자 
+- 필드의 수는 최소한으로 하자
+- 테스트 코드도 리팩토링이 필요하다
+- 테스트하기 어려운 코드일 수록 분리하여 단위테스트하기
+
+피드백 중 이해가 안되었던 요구 사항은 "객체를 객체스럽게" 만들어야 한다는 것이다. 
+이번주 목표 중 하나는 객체를 객체스럽게 만든다는 의미를 이해하는 것으로 정할 수 있었다.
+
+## 개인적인 목표
+
+4주차 미션을 받아보고 요구사항이 더욱 어려워진..것을 느꼈다. 그리고 생각했다.
+"아 요구사항만 충족하기에도 시간이 부족할 수 있겠다.."
+그렇게 이번주 나의 개인 목표는 2가지로 정했다.
+
+### Commit 수 줄이기 !
+
+커밋 수는 2주차 119개, 3주차 69개로 점차 줄여나가고 있었지만 그럼에도 커밋을 더욱 줄여보고 싶었다. 커밋을 단지 줄이는 행위에 만족감 보다는 커밋을 줄이려 노력하면서 코드를 더욱 신중하게 바라보고 찐하게 생각해보는 경험을 3주차에 해보았기에 4주차도 그 느낌을 가지고 코드를 짜면 오히려 효율이 좋을 것이라 생각을 했다! 
+<2주차>
+![](https://velog.velcdn.com/images/tkdgk1996/post/38c8093c-90fc-490d-a450-98c143471481/image.png)
+<3주차>
+![](https://velog.velcdn.com/images/tkdgk1996/post/73ce04ee-4e41-48f7-bb71-54f2c27d8a00/image.png)
+<4주차>
+![](https://velog.velcdn.com/images/tkdgk1996/post/188edfa7-e09e-4347-84f8-4b6a2091fc32/image.png)
+
+현재 블로그를 쓰고 있는 현 시점에서 Commit 수 "61개"로 전체 프리코스 과정중 가장 적은 commit수를 기록했다! 다른 주차 미션들 보다 이번 주 미션이 더 어렵게 느껴졌고 테스트 코드의 양도 더 늘린 점에 대해 스스로 만족하고 있다.(아직 제출전이라서.. 또 리팩토링 할 가능성이 있긴하다..) 
+
+Commit 수를 줄이기 위해 2가지를 신경썼다.
+
+1. 기능 목록 최대한 잘짜기
+기능 목록을 든든하게 만들어 놓으면 코드를 짜던 도중 기능을 추가하는 경우가 감소된다. 물론 처음부터 완벽한 기능목록을 만들 순 없었지만 이번 미션에서는 기능목록을 잘짜기 위해 기능목록에 많은 시간을 투자했다.
+2. 커밋 하기 전 또 추가할 내용은 없는지 다시한번 생각하기
+2주차 3주차 미션을 해내면서 기능을 하나 완성시키면 흥분감에 커밋을 빨리 해버렸다.. 뭔가 와 해냈다! 빠이! 이런식으로 기능들을 하나하나 올렸던 게 많은 커밋 수의 원인이라 판단했다. 기능을 하나 구현하더라도 더 추가할 건 없는지 오류는 없는지 다시 확인, 다른 기능과 연결이 되는지 까지 확인 후 커밋을 하자 커밋의 수가 줄어들었다.
+
+### Readme 파일을 자세히 작성하자
+
+코수타 시간에 코치님께서 말씀해 주신 피드백이다. Readme 파일을 최대한 자세히 작성해야한다고 말씀하셨던게 기억에 남았다.
+이 파일을 누군가가 받으면 코드를 먼저 들여다 보기 보단 Readme파일을 먼저 열어보겠구나 라는 생각이 들었다. 그렇게 이번 미션은 누군가 나의 코드를 본다고 생각하고 Readme파일을 최대한 친절하게 작성하였다. 
+
+![](https://velog.velcdn.com/images/tkdgk1996/post/b8a3ae58-bbee-43b0-9eaf-9caf017185c4/image.png)
+![](https://velog.velcdn.com/images/tkdgk1996/post/ccce4b5b-b2fd-434b-8b8b-ae36675738fd/image.png)
+![](https://velog.velcdn.com/images/tkdgk1996/post/4ac8c250-8215-40e8-97e6-d329c5e05d29/image.png)
+
+이번 미션에는 필자가 구현한 기능 목록에 대한 설명을 작성했다.
+MVC 패턴에 따라 각 각  Model, Controller, View 가 어떤 메서드와 객체정보를 가지고 있고 어떤 역할을 하는지 자세히 작성해 놓았다.
+부족한 코딩 실력이기에 이런 자세한 글이 더욱 필요할 것이라는 생각이 들었다.
+😭
+
+## 미션 목표 
+
+### 객체는 객체답게사용하자!
+
+[getter,setter 자료](https://tecoble.techcourse.co.kr/post/2020-04-28-ask-instead-of-getter/)
+[getter,setter 유튜브 자료](https://www.youtube.com/watch?v=c5m3ybct-zs&t=395s)
+
+위 두 자료를 가장 많이 참고했다. 
+
+객체를 객체답게 사용하려면 getter를 최소화로 하고 클래스 내부에서 setter 함수를 이용해 내보낼 값만 getter 메서드로 내보내야 한다고 결론내렸다.
+
+> getter : 멤버변수의 값을 호출하는 메소드
+> setter : 멤버변수의 값을 변경시키는 메소드
+
+처음에는 객체를 객체답게 사용한다는 말을 이해하기 보다는 이 getter와 setter를 이해하는데 많은 시간을 투자했다.
+왜? 외부에서 로직을 수행하면 안되는걸까? 
+외부에서 로직을 수행하면 외부에서 값이 변경되어 오류를 유발 할 수 있고 디미터 법칙을 위반한다. 
+
+디미터 법칙이란 기차처럼 꼬리에 꼬리를 무는 코드의 형태를 말한다. 
+```
+bridgeGame.getItem().goCalcuation().getReturn() 
+```
+이러한 형태의 코드를 기차 충돌 코드라고 한다. 이렇게 복잡한 결합을 나타내면 프로그램이 불안정하고 가독성에도 좋지 않다. getter를 무분별하게 사용하여 외부에서 값을 처리한다면 위 디미터 법칙을 위반할 수 있는 것이다.
+
+그렇게 먼저 getter와 setter를 이해하고 getter를 최소하려고 노력했다. 
+한 객체 내부에서 최대한 로직이 이루어져 외부로는 필요한 값만 getter 할 수 있도록 하였다.
+
+필드에 대해서도 학습할 수 있었다. #을 왜 붙이는 걸까 3주차 까지만해서 제대로 느끼지 못했다. 이번 객체를 학습하면서 그 이유를 알게되었다. #은 그냥 자물쇠같은거다. 밖에서는 이 값을 직접적으로 사용할 수 없도록 한다. 이유는 외부에서 이 값이 변경되는 것을 원치 않기 때문이다. 이 값은 객체내부에서 변경되도록 하여 객체가 더욱 객체스럽게 일하도록 한다.
+
+getter를 최소화 하려고 보니 필드의 숫자를 줄이려 노력하는 필자를 발견했다.
+아마 필드의 숫자를 줄이고 객체를 객체답게 사용하고 하는 모든 요구사항은 우테코의 큰 그림이 아니었을까..생각을 한다. 자연스럽게 정답을찾아가도록 유도해 주셨다..
+
+내가 이해한 객체는 객체스럽게는 
+> 객체가 알아서 **값이 업데이트**가 되고 원하는
+시점에서 그 값을 불렀을 때 객체가 **이미 원하는 결과값을 만들어 놓은 상태**
+
+이다. 그렇게 필자가 짠 코드는 아래 코드와 같다.
+```js
+class BridgeGame {
+  #indexCount;
+  #gameResult;
+  #tryCount;
+
+  constructor(indexCount, gameResult, tryCount) {
+    this.#indexCount = indexCount;
+    this.#gameResult = gameResult;
+    this.#tryCount = tryCount;
+  }
+
+
+  pass(userMove) {
+    if (userMove === "U") {
+      this.#gameResult[0].push("O");
+      this.#gameResult[1].push(` `);
+    }
+    if (userMove === "D") {
+      this.#gameResult[0].push(` `);
+      this.#gameResult[1].push("O");
+    }
+  }
+
+  fail(userMove) {
+    if (userMove === "U") {
+      this.#gameResult[0].push("X");
+      this.#gameResult[1].push(` `);
+    }
+    if (userMove === "D") {
+      this.#gameResult[0].push(` `);
+      this.#gameResult[1].push("X");
+    }
+  }
+
+  reset() {
+    const resetResult = [[], []];
+    const resetIndex = 0;
+    this.#gameResult = resetResult;
+    this.#indexCount = resetIndex;
+    this.#tryCount = this.#tryCount + 1;
+  }
+
+  getResult() {
+    return this.#gameResult;
+  }
+
+  getTryCount() {
+    return this.#tryCount;
+  }
+
+  indexCountUp() {
+    this.#indexCount = this.#indexCount + 1;
+  }
+
+  move(bridge, userMove) {
+    if (bridge[this.#indexCount] !== userMove) {
+      this.fail(userMove);
+      return false;
+    }
+    if (bridge[this.#indexCount] === userMove) {
+      this.pass(userMove);
+      this.indexCountUp();
+      return true;
+    }
+  }
+
+  
+  retry(retryOrGiveUp) {
+    if (retryOrGiveUp === "R") {
+      return true;
+    }
+    if (retryOrGiveUp === "Q") {
+      return false;
+    }
+  }
+}
+```
+내가 사용한 필드는 indexCount, gameResult, tryCount 이다.
+
+"indexCount"는 외부에서 값을 get 하지 않아도 된다.
+bridge 배열을 순회하며 사용자의 입력값과 비교하고 그 값이 일치한다면 indexCount를 1 높여주는 indexCountUp setter로 값을 수정하여 로직을 구성하였다. 
+ 
+"gameResult"와 "tryCount"는 유저에게 출력될 때 필요한 값이다. 
+Controller가 그 값을 알아야 한다고 판단하여 이 두 값은 getter로 외부로 보내도록 하였다. 대신 두 값은 내부 pass() fail() reset()의 setter 메서드를 이용하여 객체 내부에서 계산을 마친 뒤 외부로 보내도록 로직을 구성하였다.
+
+이렇게 객체를 객체답게 사용하기위해 getter , setter ,field, 디미터 법칙등을 학습할 수 있는 좋은 기회였다. 객체를 객체답게 사용하니 controller의 함수가 많이 축소되어 4주차 미션 요구사항 중 하나인 함수 최소화에도 영향을 주었다. 
+> 모든 미션이 결국 하나의 점으로 연결되어 있구나 라고 생각했다!!👍
+
+### 함수의 길이가 10라인이 넘지 않도록 하자 
+
+4주차 미션에는 함수의 길이가 15라인에서 10라인으로 줄었다.. 이 요구사항을 
+충족시키기면서 느꼈던 건 어떻게든 되긴하는구나.. 생각을 했다.
+결국 모든 미션은 보기 좋은 코드를 만드는 것이라 생각했다. 위의 요구사항인 객체를 객체답게 그리고 함수의 기능을 최소화 등 다른 요구사항들을 신경쓰며 미션을 진행하다보니 자연스럽게 함수의 길이가 줄어들어 있었다! 
+
+1주차에 비해 필자의 실력이 향상됨을 느꼈던 부분이 바로 이 부분이다.
+프리코스를 수강하기 전에 함수를 나누기는 커녕 아주 많은 코드를 한 함수에 집어 넣어 놓곤했다. 이제는 함수를 분리하는 연습이 어느 정도 돼서 그런지 15라인에서 10라인으로 줄이는데 큰 어려움은 없었던 거 같다! (잘 짰는지는 모르겠지만..😭)
+
+### Jest를 이용하여 본인이 정리한 기능 목록이 정상 동작함을 테스트 코드로 확인한다.
+
+테스트 코드 미션은 2주차 부터 있었지만 뭔가..계속 아쉬운 느낌이 많이 들었다. 이번 주차 미션은 최대한 간결하게 많은 코드를 테스트에 성공하고 싶었다. 
+[테스트하기 좋은 메서드로만들기 글](https://tecoble.techcourse.co.kr/post/2020-05-07-appropriate_method_for_test_by_parameter/)
+
+필자는 위 글을 많이 참고하여 메서드들을 최대한 테스트하게 좋게 만들었다. 
+필자가 생각하기에 
+> 테스트 하기 좋기 위해서는 각각의 메서드가 독립적으로 분리되어야 한다고 생각했다.
+
+필자는 다리건너기 게임에 핵심 로직이 담겨있는 BridgeGame.js의 메서드들이 각각 독립적으로 역할을 수행하도록 코드를 구성하였고 테스트 코드를 작성하였다. 
+`BridgeGame.js`의 코드는 위 "객체를 객체답게" 목록에서 볼 수 있다.
+
+<필자의 테스트코드>
+```js
+
+describe(`bridgeSize 입력값 타당성 테스트`, () => {
+  test.each([["0"], ["-1"], ["21"]])(
+    `유저가 3이상 20이하의 숫자를 입력했는지 확인`,
+    (input) => {
+      expect(() => checkBridgeLength(input)).toThrow(
+        ERROR.ERROR_BRIDGE_LENGTH_RANGE
+      );
+    }
+  );
+
+  test.each([["a"], ["a1"], ["#3"], ["10."]])(
+    `유저가 숫자만 입력 했는지 확인`,
+    (input) => {
+      expect(() => {
+        Validation.checkBridgeLength(input);
+      }).toThrow(ERROR.ERROR_BRIDGE_LENGTH_ONLY_NUM);
+    }
+  );
+});
+
+describe(`다리를 생성기능 테스트`, () => {
+  test(`입력받은 bridgeSize와 만들어진 다리 배열의 길이는 일치한다`, () => {
+    const size = 3;
+    const generateRandomNumber = BridgeRandomNumberGenerator.generate;
+
+    expect(BridgeMaker.makeBridge(size, generateRandomNumber)).toHaveLength(
+      size
+    );
+  });
+
+  test(`생성된 랜덤 숫자가 1이면 "U"를 배열에 저장한다.`, () => {
+    const size = 3;
+    function generateRandomNumber() {
+      return 1;
+    }
+    expect(BridgeMaker.makeBridge(size, generateRandomNumber)).toEqual([
+      "U",
+      "U",
+      "U",
+    ]);
+  });
+
+  test(`생성된 랜덤 숫자가 0이면 "D"를 배열에 저장한다`, () => {
+    const size = 3;
+    function generateRandomNumber() {
+      return 0;
+    }
+    expect(BridgeMaker.makeBridge(size, generateRandomNumber)).toEqual([
+      "D",
+      "D",
+      "D",
+    ]);
+  });
+
+  test(`생선된 랜덤 숫자는 0 또는 1 이다.`, () => {
+    expect(String(BridgeRandomNumberGenerator.generate())).toMatch(/0|1/);
+  });
+});
+
+describe(`userMove 입력값 타당성 테스트`, () => {
+  test.each([["u"], ["d"]])(
+    `알파벳이 UpperCase가 아닐 때 에러발생`,
+    (input) => {
+      expect(() => {
+        Validation.checkMove(input);
+      }).toThrow(ERROR.ERROR_BRIDGE_MOVE_UPPERCASE);
+    }
+  );
+
+  test.each([["#d"], ["a"], ["1d"], ["123"], ["U%"], ["D#"]])(
+    `U 또는 D 가 아닌 다른 걸 입력했을 때 에러발생`,
+    (input) => {
+      expect(() => {
+        Validation.checkMove(input);
+      }).toThrow(ERROR.ERROR_BRIDGE_MOVE_RANGE);
+    }
+  );
+  test.each([["DD"], ["UU"]])(`2글자 이상을 입력했을 때 에러발생`, (input) => {
+    expect(() => {
+      Validation.checkMove(input);
+    }).toThrow(ERROR.ERROR_BRIDGE_MOVE_LENGTH);
+  });
+});
+
+describe(`유저 이동 결과 판단 및 결과를 배열에 저장 테스트`, () => {
+  test(`U을 입력했을 때 유저가 다리 건너기에 실패하면 이중 배열에 그 결과값을 저장한다.`, () => {
+    const bridgeGame = new BridgeGame(0, [[], []], 1);
+    bridgeGame.fail("U");
+    expect(bridgeGame.getResult()).toEqual([["X"], [` `]]);
+  });
+
+  test(`U을 입력했을 때 유저가 다리 건너기에 성공하면 이중 배열에 그 결과값을 저장한다.`, () => {
+    const bridgeGame = new BridgeGame(0, [[], []], 1);
+    bridgeGame.pass("U");
+    expect(bridgeGame.getResult()).toEqual([["O"], [` `]]);
+  });
+
+  test(`D을 입력했을 때 유저가 다리 건너기에 실패하면 이중 배열에 그 결과값을 저장한다.`, () => {
+    const bridgeGame = new BridgeGame(0, [[], []], 1);
+    bridgeGame.fail("D");
+    expect(bridgeGame.getResult()).toEqual([[` `], ["X"]]);
+  });
+
+  test(`D을 입력했을 때 유저가 다리 건너기에 성공하면 이중 배열에 그 결과값을 저장한다.`, () => {
+    const bridgeGame = new BridgeGame(0, [[], []], 1);
+    bridgeGame.pass("D");
+    expect(bridgeGame.getResult()).toEqual([[` `], ["O"]]);
+  });
+
+  test(`bridge 와 userMove를 입력 받았을 때 통과/실패 를 판단할 수 있다.`, () => {
+    const bridgeGame = new BridgeGame(0, [[], []], 1);
+    const bridge = ["U", "D", "U"];
+    const userMove = "U";
+
+    expect(bridgeGame.move(bridge, userMove)).toBeTruthy();
+  });
+
+  test(`bridge 와 userMove를 입력 받았을 때 통과/실패 를 판단할 수 있다.`, () => {
+    const bridgeGame = new BridgeGame(0, [[], []], 1);
+    const bridge = ["D", "U", "U"];
+    const userMove = "U";
+
+    expect(bridgeGame.move(bridge, userMove)).toBeFalsy();
+  });
+
+  test(`bridge 와 userMove를 입력 받았을 때 통과/실패 를 판단할 수 있다.`, () => {
+    const bridgeGame = new BridgeGame(2, [[], []], 1);
+    const bridge = ["D", "U", "U"];
+    const userMove = "U";
+
+    expect(bridgeGame.move(bridge, userMove)).toBeTruthy();
+  });
+});
+
+describe(`재시작 입력값 타당성 테스트`, () => {
+  test.each([["r"], ["q"]])(
+    `알파벳이 UpperCase가 아닐 때 에러발생`,
+    (input) => {
+      expect(() => {
+        Validation.checkRetry(input);
+      }).toThrow(ERROR.ERROR_RETRY_UPPERCASE);
+    }
+  );
+
+  test.each([["a"], ["#"], ["Q."], ["R3"]])(
+    `R 또는 Q가 아닌 다른 걸 입력했을 때 에러발생`,
+    (input) => {
+      expect(() => {
+        Validation.checkRetry(input);
+      }).toThrow(ERROR.ERROR_RETRY_RANGE);
+    }
+  );
+
+  test.each([["RR"], ["QQ"], ["QR"], ["RQ"]])(
+    `2글자 이상을 입력했을 때 에러발생`,
+    (input) => {
+      expect(() => {
+        Validation.checkRetry(input);
+      }).toThrow(ERROR.ERROR_RETRY_LENGTH);
+    }
+  );
+});
+
+describe(`입력값에 따라 재시작/종료 판단`, () => {
+  test(`유저가 R을 입력하면 true를 반환한다.`, () => {
+    const bridgeGame = new BridgeGame(0, [[], []], 1);
+    const userInput = "R";
+
+    expect(bridgeGame.retry(userInput)).toBeTruthy();
+  });
+
+  test(`유저가 Q을 입력하면 false를 반환한다.`, () => {
+    const bridgeGame = new BridgeGame(0, [[], []], 1);
+    const userInput = "Q";
+
+    expect(bridgeGame.retry(userInput)).toBeFalsy();
+  });
+
+  test(`유저가 재시작을 입력하면 이동 정보를 담은 배열은 초기화 된다.`, () => {
+    const bridgeGame = new BridgeGame(0, [[], []], 1);
+    bridgeGame.pass("U");
+    bridgeGame.pass("U");
+    expect(bridgeGame.getResult()).toEqual([
+      ["O", "O"],
+      [` `, ` `],
+    ]);
+    bridgeGame.reset();
+
+    expect(bridgeGame.getResult()).toEqual([[], []]);
+  });
+
+  test(`유저가 재시작을 입력하면 이동 정보 배열은 초기화 되고 시도 횟수는 증가한다.`, () => {
+    const bridgeGame = new BridgeGame(0, [[], []], 1);
+
+    bridgeGame.pass("U");
+    expect(bridgeGame.getTryCount()).toBe(1);
+
+    bridgeGame.reset();
+    expect(bridgeGame.getTryCount()).toBe(2);
+  });
+});
+
+```
+이번 미션에서는 Matcher를 더 다양하게 사용해보려 노력했다.
+toBe, Equal, toThrow 뿐 아니라 toBeTruthy, toBeFalsy, toMatch, toHavelength 를 사용하여 기능에 대한 테스트의 다양성을 넓혔다.
+
+사실 mock 함수를 사용해보고 싶어서 계속 공부를 하고 있지만.. 이해를 못한 상태이다.. 미션이 어느정도 마무리 되면 mock함수를 사용하여 테스트 코드 수정 할 것이다. 
+
+test.each라는 기능을 학습할게 되어 반복되는 매개변수에 대한 테스트를 가독성 좋게 실행할 수 있었다.
+[3주차 피드백(test.each)사용법](https://docs.google.com/document/d/1qgL4c5GzMZ6Pm7pFF71Kigk4DRPYTcWiR6T0NsrtpDw/edit#)
+아래의 글을 보면 사용법 및 피드백 파일을 열람할 수 있다!!📣
+
+테스트코드는 정말 잘해보려 노력을 해도 중간에 계속 지치게된다.. 어려운거라고 말씀은 해주셨지만 어려워서 더 잘해보고싶다.. 마지막 주차까지 아쉬움으로 남는 것은 이 테스트코드이다. 프리코스가 끝나면 테스트 코드에 대해 먼저 공부를 해야겠다!! 📚
+
+## 나를 힘들게 했던 오류 및 상황들 😡
+
+### 오류 발생 후 다시 그 시점에서 입력받기! 
+
+4주차 미션 요구 사항 중 
+
+> 사용자가 잘못된 값을 입력한 경우 throw문을 사용해 예외를 발생시키고, "[ERROR]"로 시작하는 에러 메시지를 출력 후 그 부분부터 입력을 다시 받는다.
+
+에러를 출력 후 그 부분붙터 입력을 다시 받는 요구사항이 있었다. 에러를 발생시키는 코드를 구현 한 뒤 
+
+```js
+const Validation = {
+  checkBridgeLength(userInput) {
+    if (userInput < 3 || userInput > 20) {
+      throw new Error(ERROR.ERROR_BRIDGE_LENGTH_RANGE);
+    }
+    if (/^[0-9]$/g.test(userInput) === false) {
+      throw new Error(ERROR.ERROR_BRIDGE_LENGTH_ONLY_NUM);
+    }
+  },
+
+  checkMove(userInput) {
+    if (userInput === "u" || userInput === "d") {
+      throw new Error(ERROR.ERROR_BRIDGE_MOVE_UPPERCASE);
+    }
+    if (/^[U|D]+$/g.test(userInput) === false) {
+      throw new Error(ERROR.ERROR_BRIDGE_MOVE_RANGE);
+    }
+    if (userInput.length !== 1) {
+      throw new Error(ERROR.ERROR_BRIDGE_MOVE_LENGTH);
+    }
+  },
+
+  checkRetry(userInput) {
+    if (userInput === "r" || userInput === "q") {
+      throw new Error(ERROR.ERROR_RETRY_UPPERCASE);
+    }
+    if (/^[R|Q]+$/g.test(userInput) === false) {
+      throw new Error(ERROR.ERROR_RETRY_RANGE);
+    }
+    if (userInput.length !== 1) {
+      throw new Error(ERROR.ERROR_RETRY_LENGTH);
+    }
+  },
+};
+```
+
+ 아래 사진과 같이 Controller에서 호출하였다. 
+ 
+ ![](https://velog.velcdn.com/images/tkdgk1996/post/026bc00d-2104-4302-923d-859903438ba5/image.png)
+ 그런데 계속 다리 길이를 입력해주세요 라는 함수가 두 번씩 호출되었다. 
+ 
+ **나의 의도👀** : 타당성 검사를 해서 오류가 발생하면 오류를 catch하여 오류 메세지  Console.print()를 활용하여 출력 후  this.getUserBridgeLength() 를 호출해 다시 입력을 받는 것이었다. 
+ 
+**알게된 점👀** : try catch를 사용하는 이유 ! 
+부끄러운 이야기지만 try catch를 왜 사용하는지 잘 모르고 사용했다.
+"그저 에러를 잡고 그 이후 동작을 할 때는 try catch를 쓴다." 정도로만 이해를 했었다.😭
+이번 에러를 접하면서 try catch에 대해 다시 공부를 했다. 
+
+throw new Error() 는 오류를 발생시키고 그 시점에서 부터 모든 게 중단된다. 그렇기 때문에 프로그램 입장에서 오류가 발생됐다고 모든 프로그램이 중단되면 안되기 때문에 오류 발생 후 중단시키지 않고 이후 과정을 실행 시키기 위해 try catch가 존재 하는 것이었다!! 
+필자는 에러가 발생하면 그 시점에서 컴퓨터가"아 에러구나 중단 그리고 그 다음 뭘할래?" 이렇게 자동으로 받는 줄 알았다.  그게 아니라 throw new Error 를 날렸을 때 중단되는 것이고 이를 try catch로 이어가는 것이었다. 
+
+그렇게 필자는 try catch로 이후 에러 상황을 이어가려했지만 Console.print() 는 그냥 출력을 할 뿐 그 자체 상황을 중지 시키지 않는다!! 
+
+**잘못됐던 점** : checkBridgeLength는 함수의 실행을 중단 시키지 않고 계속 흘러간다. 그렇기 때문에 에러가 발생하더라도 아래의 getUserMove() 메서드 를 실행하게 되고 그 안에 있는 또 다른 입력값을 받는 함수가 실행 되는것이다.
+
+**해결법** : 그럼 getUserBridgeLength 메서드에서 try-catch로 타당성 검사로 에러를 잡은 후 메서드 내부의 다른 함수를 어떻게 중지 시키고 다시 그 시점에서 입력을 받을 것인지가 관건이었다!
+나의 해결 방법은 checkBridgeLength에서 에러를 판단할 수 있는 값을 return을 해 함수에 조건을 다는 것이다. 처음엔 boolean 타입을 return 했었는데 이는 코드를 읽을 때 가독성을 해치는 거 같아 string 타입으로 "에러발생" 을 리턴했다. 
+<해결코드> 
+![](https://velog.velcdn.com/images/tkdgk1996/post/3b165f23-9a0a-4578-9f0b-6ffb27a236b7/image.png)
+
+
+이렇게 타당성 검사 후 return 을 하여 그 값에 따라 다음 함수를 진행시킬지 말지를 선택하였다. 에러발생을 리턴하지 않는 경우에는 다음 기능을 이어 나가도록 설계하였다. 이 글을 읽는 분들 중 더 좋은 방법이 있다면 코멘트해주시면 좋을 거같다ㅠㅠ(부탁드립니다..🙏🏻)
+
+
+### 테스트 코드 오류 발생( 타당성 검사에서 메세지 출력)
+
+테스트 코드를 모두 성공하고 타당성 검사시에 오류가 발생했을 때 에러메세지 까지 일치하는지 테스트를 하였다..
+![](https://velog.velcdn.com/images/tkdgk1996/post/05189dce-4cc4-4e95-9852-2526131ae67f/image.png)
+
+에러발생! 
+
+node.js 를 실행해서 프로그램을 실행시켜보면 에러메세지는 정상작동되는데 테스트 코드를 돌려보면 다른 에러메세지가 received 되어 있었다.. 그럼 테스트 코드의 문제인걸 조금 늦게 알게 되었다..(원래 코드에 문제가 있는줄..)
+
+문제점: test.each의 미숙
+
+[test.each사용법](https://www.daleseo.com/jest-each/)
+ 
+ 위 글을 볼고 다시 사용법을 익혔다. 처음 필자가 작성한 테스트 코드는 
+ ```js
+ test.each([["0"], ["-1"], ["21"]])(
+    `유저가 3이상 20이하의 숫자를 입력했는지 확인`,
+    (input) => {
+      expect((input) => checkBridgeLength(input)).toThrow(
+        ERROR.ERROR_BRIDGE_LENGTH_RANGE
+      );
+    }
+  );
+```
+이렇게 되어있었다. [[],[],[]]를 순환 한다는 것은 알고 있었지만 우테코 피드백 파일에 있는 그 코드를 그대로 복사 붙여넣기 하다보니 이런 오류를 체험했던 거 같다. 
+이것또한 우테코의 큰그림?..
+
+은 아니고 나의 부족함과 집중력의 문제다. 자세히 보면 expect(input)을 넣을 필요가 없다 그러다 보니 각 배열을 순환하며 가져오는 input의 값이 사용 되지 않고 expect(여기에) 있는 undefined 값이 계속 테스트 되니 오류 메세지는 계속해서 정규식에서 걸려 정규식에 해당되는 에러 메세지만 등장했다.
+
+해결방법 : 해결방법은 간단했다.
+
+```js
+ test.each([["0"], ["-1"], ["21"]])(
+    `유저가 3이상 20이하의 숫자를 입력했는지 확인`,
+    (input) => {
+      expect(() => checkBridgeLength(input)).toThrow(
+        ERROR.ERROR_BRIDGE_LENGTH_RANGE
+      );
+    }
+  );
+```
+expect에 불필요한 매개변수인 input을 빼는 것이다. 그렇게 하자 배열을 순환하여 얻은 input이 정상적으로 테스트코드는 checkBridgeLent()의 매개변수로 들어가 정상적인 테스트가 가능했다. 
+
+에러를 통해 느낀점: 에러가 발생하면 침착하게 분석하자. 해당 에러는 자세히 들여다 봤으면 쉬운 해결방법이 있었는데 분석적이지 못하고 그저 본 코드만 뒤적거리다 보니 그 해결법을 찾지 못했었다. 앞으로는 에러가 발생하면 어떤 부분에서 에러가 발생했는지 왜 발생했는지 나름의 기준을 세우고 에러에 접근해야겠다. 
+개발자로서 중요한 역량은 에러가 발생해도 아무렇지 않은 척하는거 같다!!
+![](https://velog.velcdn.com/images/tkdgk1996/post/93b03ae1-0c18-4c0b-86a0-1f792faa0440/image.png)
+
