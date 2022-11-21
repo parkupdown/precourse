@@ -1150,3 +1150,130 @@ expect에 불필요한 매개변수인 input을 빼는 것이다. 그렇게 하�
 개발자로서 중요한 역량은 에러가 발생해도 아무렇지 않은 척하는거 같다!!
 ![](https://velog.velcdn.com/images/tkdgk1996/post/93b03ae1-0c18-4c0b-86a0-1f792faa0440/image.png)
 
+### 함수 라인 10줄 이하로 만들기
+
+이번 미션에서는 함수 라인이 10줄 이하로 제한되어 있었다!
+다른 함수들은 다른 요구사항들을 지켜나가다 보니 자연스럽게 함수가 분리가 되어
+함수 라인을 굳이 신경쓰지 않아도 10줄이하로 되어 있었다.(잘했을까?..🤮)
+
+그런데 한 가지 메서드에서 10줄 이하로 줄이는데 큰 어려움을 겪었다.
+
+![](https://velog.velcdn.com/images/tkdgk1996/post/fc1865c2-8f1f-4d17-a1d9-2fb84ca0921b/image.png)
+
+바로 위 BridgeMaker 객체의 makeBridge 메서드이다. 
+조건에 프로퍼티는 추가가 불가능하다! 필자가 이해하기로는 makeBride 메서드 내부에서 10줄 이하로 다리를 만들어 내야하는것으로 이해를 했다. 
+
+초기 필자가 작성한 코드는 
+```js
+ makeBridge(size, generateRandomNumber) {
+    let bridge = [];
+    for(let i = 0 ; i<size.length ; i++){
+   const number = String(generateRandomNumber());
+   if(number==="1"){
+   bridge.push("U")
+   }
+    if(number==="0"){
+    bridge.push("D")
+    }
+    }
+    return bridge
+  },
+```
+위 코드는 13줄로 요구 사항에서 벗어날 뿐더러 if문을 두 번 반복해 좋지 않은 코드로 생각됐다. 그리고 for문 보다는 while 문이 가독성에 더 좋을 거 같아 
+> for문 대신 while문으로 변경  
+return을 사용해 if문을 한 번만 사용해보기로 결정했다 
+
+그렇게 수정한 코드 
+```js
+  makeBridge(size, generateRandomNumber) {
+    let bridge = [];
+    while (size > bridge.length) {
+    const number = String(generateRandomNumber())
+    if(number==="1"){
+    bridge.push("U")
+      return
+    }
+      bridge.push("D")
+    }
+    return bridge;
+  }
+   
+```
+
+위 코드는 12줄로 처음 시도한 코드보다 1줄 줄였지만 문제가 있었다.
+먼저 반복문 내에서 return을 해버리니 bridge 배열에 알파벳 U 또는 D 가 한 개만 들어가고 반복문이 종료되었다. 
+> 그렇게 필자는 return 대신 continue를 써서 if 조건에서 중단은 되지만 while 반복문이 계속 실행 될 수 있도록 코드를 짜보았다.
+
+```js
+  makeBridge(size, generateRandomNumber) {
+    let bridge = [];
+    while (size > bridge.length) {
+    if( String(generateRandomNumber()==="1"){
+     bridge.push("U")
+      continue
+    }
+    if(String(generateRandomNumber()==="0"){
+    bridge.push("D")
+     }
+    }
+    return bridge;
+  }
+   
+```
+
+이렇게 하면 코드는 정상적으로 진행이 됐지만 함수 길이가 13줄로 코드 길이를 줄이는데 큰 도움을 주지는 못했다..😃
+
+
+> 필자는 String(generateRandomNumber())을 변수로 받지 않고 
+바로 if문 조건으로 적용하여 함수의 길이를 줄이려 하였다!
+
+
+```js
+  makeBridge(size, generateRandomNumber) {
+    let bridge = [];
+    while (size > bridge.length) {
+    if( String(generateRandomNumber()==="1"){
+    bridge.push("U")
+    }
+    if(String(generateRandomNumber()==="0"){
+    bridge.push("D")
+     }
+    }
+    return bridge;
+  }
+   
+```
+
+바보같은생각이었다.. generateRandomNumber의 매개변수가 바로 if문으로 들어가 "U" 만 반복되거나 "D" 만 반복되는 bridge가 완성되었다.😭
+이 전의 코드들은 반복문 안에 변수로 새로운 랜덤 숫자를 저장하여 
+반복문이 순환할 때 마다 새로운 랜덤 변수가 생기는 반면
+위 코드는 값을 반복문 안에 따로 지정해주지 않으니 하나의 매개변수 generateRandomNumber에 관해서만 if 조건을 검사하는 것이다. 
+> 즉, 새로운 랜덤변수가 반복문 속에서 생성되지 않는것!! 
+
+최종적 코드에서 필자가 고려한 점은 
+
+1. 새로운 랜덤숫자가 조건문안에서 생성되기
+2. if문을 최소화 하기 
+
+이렇게 두 가지를 개선하여 최종 코드를 완성했다..
+
+```js
+makeBridge(size, generateRandomNumber) {
+    let bridge = [];
+    let pushAlpabet = (alpabet) => bridge.push(alpabet);
+
+    while (size > bridge.length) {
+      const number = String(generateRandomNumber());
+      number === "1" ? pushAlpabet("U") : pushAlpabet("D");
+    }
+
+    return bridge;
+  },
+```
+먼저 메서드 안에 함수 pushAlpabet을 만들었다.
+이 함수는 받아온 매개변수를 bridge 배열에 push 하는 역할을 하고 
+if 문 대신 삼항연산자를 사용했다. 삼항 연산자가 가독성 측면, 오류를 유발 할 수 있는 점에서 좋지 않다는 이야기를 들어 사용을 지양하려 했지만 10줄의 함수 코드를 맞추기 위해서 어쩔수 없이 사용했다..(더 좋은 방법이 있을 거 같아 계속 수정중이다..) 
+
+이 상황을 해결하기 위해 처음 알게 된 것들이 있었다. continue, 반복문 안에서 매개변수를 직접적으로 사용하면 어떻게 되는지 등 수정을 통해 많은 학습을 할 수 있었다!! 7기 프리코스를 시작할 참가자 분들에게 최대한 많은 수정과 오류를 겪어보는게 좋은 것이라 말씀드리고 싶다!
+![](https://velog.velcdn.com/images/tkdgk1996/post/9b84cd31-9524-4c4b-8ac0-4b1a93f61b90/image.png)
+
